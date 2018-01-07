@@ -37,7 +37,7 @@ return [
     'facebook' => [
         'client_id' => '142555079788957',
         'client_secret' => '01419aaea60abecf347a5d4813069f7b',
-        'redirect' => 'http://127.0.0.1:8000/home',
+        'redirect' => 'http://secret-tundra-12313.herokuapp.com/',
     ]
 
 ];
