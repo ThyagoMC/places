@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Laravel\Socialite\Facades\Socialite;
+use Socialite;
 use App\Services\SocialFacebookAccountService;
 
 class SocialAuthFacebookController extends Controller
