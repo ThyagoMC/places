@@ -8,9 +8,9 @@ use Laravel\Socialite\Facades\Socialite;
 class SocialAuthFacebookController extends Controller
 {
     /**
-     * Redirect the user to the GitHub authentication page.
+     * Create a redirect method to facebook api.
      *
-     * @return Response
+     * @return void
      */
     public function redirect()
     {
@@ -18,15 +18,15 @@ class SocialAuthFacebookController extends Controller
     }
 
     /**
-     * Obtain the user information from GitHub.
+     * Return a callback method from facebook api.
      *
-     * @return Response
+     * @return callback URL from facebook
      */
-    public function callback()
+    public function callback(SocialFacebookAccountService $service)
     {
-        $user = Socialite::driver('facebook')->user();
-
-        // $user->token;
+        $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
+        auth()->login($user);
+        return redirect()->to('/home');
     }
 
 }
