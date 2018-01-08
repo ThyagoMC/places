@@ -17,7 +17,7 @@
                 <th>Nota</th>
             </tr>
             </thead>
-            <tbody id="dados">
+            <tbody id="dados" tyle="cursor: pointer;">
             @foreach($places as $place)
                 <a href="{{"/place/{$place->id}"}}">
                     <tr data-id="{{$place->id}}">

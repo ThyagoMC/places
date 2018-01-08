@@ -34,8 +34,10 @@ Route::get('/myreviews', function (){
 
 Route::group(['prefix' => '/place'], function(){
     Route::get('/', 'PlaceController@index');
-    Route::get('/{id}', 'PlaceController@show');
-    Route::get('/{id}/review', 'PlaceController@show');
+    Route::get('/{id}', 'PlaceController@show')->name('place');
+    Route::get('/{id}/review', 'ReviewsController@create');
+
+    Route::post('/{id}/store', 'ReviewsController@store');
     /*Route::group(['prefix' => '/cliente'], function(){
         Route::get('cadastrar', 'ClientsController@cadastrar');
     });*/

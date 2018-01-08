@@ -70,6 +70,12 @@
             @endif
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="./{{$place->id}}/review" >Adicionar Review</a>
+        </div>
+
+    </div>
 @endsection
 
 @section('script')
