@@ -22,3 +22,22 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/place', 'PlaceController@index')->name('place');
+
+Route::get('/about', function(){ return view('about');})->name('about');
+
+Route::get('/myreviews', function (){
+    $reviews = \App\Model\Review::where('user_id', Auth::id())->get();
+    return view("myreviews",['reviews' => ($reviews?$reviews:[])]);
+});
+
+Route::group(['prefix' => '/place'], function(){
+    Route::get('/', 'PlaceController@index');
+    Route::get('/{id}', 'PlaceController@show');
+    Route::get('/{id}/review', 'PlaceController@show');
+    /*Route::group(['prefix' => '/cliente'], function(){
+        Route::get('cadastrar', 'ClientsController@cadastrar');
+    });*/
+
+});
