@@ -70,12 +70,13 @@
             @endif
         </div>
     </div>
+    @if (\Illuminate\Support\Facades\Auth::check())
     <div class="row">
         <div class="col-md-4">
             <a href="./{{$place->id}}/review" >Adicionar Review</a>
         </div>
-
     </div>
+    @endif
 @endsection
 
 @section('script')
