@@ -19,6 +19,13 @@ class CreateTypesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        // Insert some stuff
+        DB::table('types')->insert(array('description' => 'Café'));
+        DB::table('types')->insert(array('description' => 'Restaurante'));
+        DB::table('types')->insert(array('description' => 'Coworking'));
+        DB::table('types')->insert(array('description' => 'Livraria'));
+        DB::table('types')->insert(array('description' => 'Outros'));
     }
 
     /**

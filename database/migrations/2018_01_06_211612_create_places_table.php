@@ -24,6 +24,27 @@ class CreatePlacesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+
+        DB::table('places')->insert(
+            array(
+                'name' => 'Café Stop',
+                'address' => 'Avenida',
+                'city' => 'Recife',
+                'state' => 'PE',
+                'country' => 'Brasil',
+                'type_id' => '1'
+            )
+        );
+        DB::table('places')->insert(
+            array(
+                'name' => 'Barzin',
+                'address' => 'Rua',
+                'city' => 'Recife',
+                'state' => 'PE',
+                'country' => 'Brasil',
+                'type_id' => '5'
+            )
+        );
     }
 
     /**
